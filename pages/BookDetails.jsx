@@ -1,4 +1,6 @@
 import { bookService } from "../services/book.service.js"
+import { LongTxt } from '../cmps/LongTxt.jsx'
+
 
 const { useState, useEffect } = React
 const { useParams, useNavigate, Link } = ReactRouterDOM
@@ -54,14 +56,11 @@ export function BookDetails() {
                 {book.listPrice.isOnSale && <div className="on-sale">On Sale</div>}
                 <img src={book.thumbnail} alt="book cover" />
             </div>
-
+            <LongTxt txt={book.description} length={120} />
             <section className="book-meta">
                 <span>{pageCounter(book.pageCount)}</span>
                 <span>{publishedDater(book.publishedDate)}</span>
             </section>
-
-
-
             <button onClick={onBack}>Back</button>
             <section>
                 <Link to={`/book/${book.prevBookId}`}><button>Prev Book</button></Link>
