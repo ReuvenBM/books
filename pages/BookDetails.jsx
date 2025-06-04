@@ -10,9 +10,15 @@ export function BookDetails() {
     const params = useParams()
     const navigate = useNavigate()
 
+
     useEffect(() => {
         loadBook()
     }, [params.bookId])
+
+    useEffect(() => {
+        if (book) console.log('Loaded book:', book)
+    }, [book])
+
 
     function loadBook() {
         bookService.get(params.bookId)
@@ -64,7 +70,7 @@ export function BookDetails() {
             <button onClick={onBack}>Back</button>
             <section>
                 <Link to={`/book/${book.prevBookId}`}><button>Prev Book</button></Link>
-                <Link to={`/book/${book.nextBookId}`}><button>Next Book</button></Link>
+                <Link to={`/book/${book.nxtBookId}`}><button>Next Book</button></Link>
             </section>
         </section>
     )
