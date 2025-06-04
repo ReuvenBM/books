@@ -10,7 +10,7 @@ export function Home() {
     return (
         <section className="home">
             <h1 ref={h1Ref}>Book's R Us!</h1>
-            <img src="/assets/img/books-HP.jpg" alt="books-image" />
+            <img src="./assets/img/books-HP.jpg" alt="books-image" />
         </section>
     )
 }
