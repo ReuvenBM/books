@@ -86,7 +86,7 @@ function _createBooks() {
         title: makeLorem(2),
         subtitle: makeLorem(4),
         authors: [makeLorem(1)],
-        publishedDate: getRandomIntInclusive(1950, 2024),
+        publishedDate: getRandomIntInclusive(1950, 2025),
         description: makeLorem(20),
         pageCount: getRandomIntInclusive(20, 600),
         categories: [ctgs[getRandomIntInclusive(0, ctgs.length - 1)]],
