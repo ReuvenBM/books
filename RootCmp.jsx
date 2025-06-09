@@ -11,7 +11,8 @@ import { About } from "./pages/About.jsx"
 import { BookIndex } from "./pages/BookIndex.jsx"
 import { Home } from "./pages/Home.jsx"
 import { BookDetails } from "./pages/BookDetails.jsx"
-
+import { AppFooter } from "./cmps/AppFooter.jsx"
+import { UserMsg } from "./cmps/UserMsg.jsx"
 
 export function App() {
 
@@ -19,7 +20,6 @@ export function App() {
         <Router>
             <section className="app">
                 <AppHeader />
-
                 <main className="main-layout">
                     <Routes>
                         <Route path="/" element={<Navigate to="/home" />} />
@@ -33,6 +33,8 @@ export function App() {
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </main>
+                <AppFooter />
+                <UserMsg />
             </section>
         </Router>
     )

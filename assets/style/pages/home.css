@@ -1,7 +1,18 @@
 .home {
-
+  position: relative;
 }
 
-.home img {
-    width: 100%;
+.home-img {
+  width: 100%;
+  display: block;
+}
+
+.home h1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  font-size: 2em;
 }

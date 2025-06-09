@@ -10,10 +10,57 @@
 .book-list li {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     background-color: var(--clr1bg);
     padding-block: 0.2em;
     border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 
+}
+
+.btns {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.5em;
+    margin-top: 0.5em;
+    justify-content: center;
+}
+
+.btns button {
+    padding: 0.3em 0.6em;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--clr2bg);
+    color: white;
+    cursor: pointer;
+}
+
+.btns button:hover {
+    background-color: var(--clr2);
+}
+.book-img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+.img-container {
+  position: relative;
+  display: inline-block;
+}
+.on-sale {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: red;
+  color: white;
+  font-size: 0.7em;
+  padding: 2px 4px;
+  border-radius: 3px;
 }
