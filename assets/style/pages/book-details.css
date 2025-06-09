@@ -79,3 +79,6 @@
   cursor: pointer;
   font-weight: bold;
 }
+.book-description {
+  min-height: 100px; 
+}

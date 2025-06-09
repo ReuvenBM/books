@@ -96,7 +96,8 @@ function _createBooks() {
           amount: getRandomIntInclusive(80, 500),
           currencyCode: "EUR",
           isOnSale: Math.random() > 0.7
-        }
+        },
+        reviews:[]
       }
       books.push(book)
     }

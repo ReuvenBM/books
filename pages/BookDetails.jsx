@@ -1,6 +1,6 @@
 import { bookService } from "../services/book.service.js"
 import { LongTxt } from '../cmps/LongTxt.jsx'
-
+import { AddReview } from '../cmps/AddReview.jsx'
 
 const { useState, useEffect } = React
 const { useParams, useNavigate, Link } = ReactRouterDOM
@@ -58,11 +58,14 @@ export function BookDetails() {
         <section className="book-details">
             <h1>Book Title: {book.title}</h1>
             <h1>Price: <span className={getPriceClass(book.listPrice.amount)}>{book.listPrice.amount}</span></h1>
-           <div className="img-container">
+            <div className="img-container">
                 {book.listPrice.isOnSale && <div className="on-sale">On Sale</div>}
                 <img src={book.thumbnail} alt="book cover" />
             </div>
-            <LongTxt txt={book.description} length={120} />
+            <div className="book-description">
+                <LongTxt txt={book.description} length={120} />
+            </div>
+
             <section className="book-meta">
                 <span>{pageCounter(book.pageCount)}</span>
                 <span>{publishedDater(book.publishedDate)}</span>
@@ -72,6 +75,7 @@ export function BookDetails() {
                 <Link to={`/book/${book.prevBookId}`}><button>Prev Book</button></Link>
                 <Link to={`/book/${book.nxtBookId}`}><button>Next Book</button></Link>
             </section>
+            <AddReview />
         </section>
     )
 }
