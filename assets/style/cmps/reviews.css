@@ -1,44 +1,51 @@
 .review {
-    width: 100%;
-    padding: 2em 1em;
+  width: 100%;
+  padding: 2em 1em;
 }
 
 .review-title {
-    text-align: left;
-    margin-left: 1em;
-    margin-bottom: 1em;
+  text-align: left;
+  margin-left: 1em;
+  margin-bottom: 1em;
 }
 
 .review-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1em;
-    width: 100%;
-    max-width: 700px;
-    margin-inline: auto;
-    background-color: var(--clr2bg);
-    padding: 1.2em;
-    border: 1px solid black;
-    border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  max-width: 700px;
+  margin-inline: auto;
+  background-color: var(--clr2bg);
+  padding: 1.2em;
 }
 
-
 .form-group {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-width: 150px;
-
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 150px;
 }
 
 .form-group input {
-    width: 100%;
-    padding: 0.3em;
+  width: 100%;
+  padding: 0.3em;
+}
+
+.star-rating {
+  display: flex;
+  gap: 0.3em;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
 .submit-button {
-    background-color: var(--clr1);
-    color: aliceblue;
+  background-color: var(--clr1);
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
