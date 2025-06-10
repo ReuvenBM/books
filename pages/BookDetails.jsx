@@ -1,6 +1,7 @@
 import { bookService } from "../services/book.service.js"
 import { LongTxt } from '../cmps/LongTxt.jsx'
 import { AddReview } from '../cmps/AddReview.jsx'
+import { ReviewList } from '../cmps/ReviewList.jsx'
 
 const { useState, useEffect } = React
 const { useParams, useNavigate, Link } = ReactRouterDOM
@@ -76,6 +77,7 @@ export function BookDetails() {
                 <Link to={`/book/${book.nxtBookId}`}><button>Next Book</button></Link>
             </section>
             <AddReview bookId = {book.id} onReviewAdded={setBook} />
+            <ReviewList bookId = {book.id} reviews = {book.reviews} onReviewDeleted={setBook} />
         </section>
     )
 }

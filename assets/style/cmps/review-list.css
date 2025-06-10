@@ -1,0 +1,37 @@
+.review-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+.review-table th,
+.review-table td {
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.review-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.review-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.review-table button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.review-table button:hover {
+  background-color: #c0392b;
+}
