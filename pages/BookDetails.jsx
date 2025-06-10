@@ -75,7 +75,7 @@ export function BookDetails() {
                 <Link to={`/book/${book.prevBookId}`}><button>Prev Book</button></Link>
                 <Link to={`/book/${book.nxtBookId}`}><button>Next Book</button></Link>
             </section>
-            <AddReview />
+            <AddReview bookId = {book.id} onReviewAdded={setBook} />
         </section>
     )
 }
