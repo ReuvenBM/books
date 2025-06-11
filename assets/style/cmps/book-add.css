@@ -1,0 +1,6 @@
+.book-add{
+    display: inline-flex;
+    flex-direction: column;
+    background-color: var(--clr2bg);
+}
+
