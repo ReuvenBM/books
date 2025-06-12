@@ -40,7 +40,7 @@ export function BookIndex() {
     if (!books) return <div>Loading...</div>
     return (
         <section className="book-index">
-            <AddBook />
+            <AddBook onBookAdded={loadBooks} />
             <BookFilter onSetFilter={onSetFilter} filterBy={filterBy} />
             <BookList
                 books={books}

@@ -1,8 +1,9 @@
 import { googleBookService } from '../services/googleBook.service.js'
+import { bookService } from '../services/book.service.js'
 
 const { useState, useEffect } = React
 
-export function AddBook() {
+export function AddBook( {onBookAdded}) {
   const [filterBy, setFilterBy] = useState({ txt: '' })
   const [results, setResults] = useState([])
 
@@ -25,6 +26,18 @@ export function AddBook() {
     return () => clearTimeout(debounceTimer)
   }, [filterBy.txt])
 
+  function onAddBook(googleBook) {
+  bookService.addGoogleBook(googleBook)
+    .then(() => {
+      console.log('Book added!')
+      onBookAdded()
+    })
+    .catch(err => {
+      console.log('Could not add book:', err)
+    })
+}
+
+
   return (
     <section className="book-add">
       <h2>Add Book from Google</h2>
@@ -40,6 +53,7 @@ export function AddBook() {
         {results.map(book => (
           <li key={book.id}>
             {book.volumeInfo.title}
+            <button onClick={() => onAddBook(book)}>➕</button>
           </li>
         ))}
       </ul>

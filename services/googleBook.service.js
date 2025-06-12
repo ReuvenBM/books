@@ -7,7 +7,6 @@ const STORAGE_KEY = 'googleBooksCache'
 function query(txt) {
   const cached = loadFromStorage()
   if (cached[txt]) {
-    console.log('From cache')
     return Promise.resolve(cached[txt])
   }
 

@@ -11,6 +11,7 @@ export const bookService = {
     save,
     getEmptyBook,
     getDefaultFilter,
+    addGoogleBook
 }
 
 function query(filterBy = {}) {
@@ -111,4 +112,36 @@ function _createBook(title, price = 100) {
     const book = getEmptyBook(title, price)
     book.id = makeId()
     return book
+}
+
+function addGoogleBook(googleBook) {
+  const imageLinks = googleBook.volumeInfo.imageLinks || {}
+
+  const newBook = {
+    id: makeId(),
+    title: googleBook.volumeInfo.title || '',
+    subtitle: googleBook.volumeInfo.subtitle || '',
+    authors: googleBook.volumeInfo.authors || [],
+    publishedDate: googleBook.volumeInfo.publishedDate || '',
+    description: googleBook.volumeInfo.description || '',
+    pageCount: googleBook.volumeInfo.pageCount || 0,
+    categories: googleBook.volumeInfo.categories || [],
+    thumbnail: imageLinks.thumbnail || '',
+    language: googleBook.volumeInfo.language || 'en',
+    listPrice: {
+      amount: getRandomIntInclusive(50, 250),
+      currencyCode: 'USD',
+      isOnSale: false
+    },
+    reviews: []
+  }
+
+  return query().then(books => {
+    const isExist = books.some(book => book.title === newBook.title)
+    if (isExist) return Promise.reject('Book already exists')
+
+    books.push(newBook)
+    saveToStorage(BOOK_KEY, books)
+    return Promise.resolve(newBook)
+  })
 }
