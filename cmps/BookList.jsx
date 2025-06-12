@@ -12,7 +12,7 @@ export function BookList({ books, onRemoveBook }) {
                     <section className="btns">
                         <div className="img-container">
                             {book.listPrice.isOnSale && <div className="on-sale">On Sale</div>}
-                            <img src={book.thumbnail} alt="book cover" />
+                            <img className="book-img" src={book.thumbnail} alt="book cover" />
                         </div>
                         <button onClick={() => onRemoveBook(book.id)}> Remove</button>
                         <Link to={`/book/${book.id}`}><button >Details</button></Link>
